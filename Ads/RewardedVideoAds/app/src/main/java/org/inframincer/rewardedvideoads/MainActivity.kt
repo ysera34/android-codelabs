@@ -7,7 +7,7 @@ import com.google.android.gms.ads.reward.RewardedVideoAd
 
 class MainActivity : AppCompatActivity() {
 
-    private val rewardedVideoAd: RewardedVideoAd? = null
+    private lateinit var rewardedVideoAd: RewardedVideoAd
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,5 +18,8 @@ class MainActivity : AppCompatActivity() {
             applicationContext,
             getString(R.string.admob_app_id)
         )
+
+        // Get reference to singleton RewardedVideoAd object
+        rewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
     }
 }
