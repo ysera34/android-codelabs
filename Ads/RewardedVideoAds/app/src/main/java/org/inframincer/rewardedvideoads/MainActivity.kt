@@ -22,4 +22,19 @@ class MainActivity : AppCompatActivity() {
         // Get reference to singleton RewardedVideoAd object
         rewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
     }
+
+    override fun onResume() {
+        rewardedVideoAd.resume(this)
+        super.onResume()
+    }
+
+    override fun onPause() {
+        rewardedVideoAd.pause(this)
+        super.onPause()
+    }
+
+    override fun onDestroy() {
+        rewardedVideoAd.destroy(this)
+        super.onDestroy()
+    }
 }
