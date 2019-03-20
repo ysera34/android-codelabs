@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RewardedVideoAds</string>
+    <string name="watch_video_button_text">Watch Video for additional coins</string>
 </resources>

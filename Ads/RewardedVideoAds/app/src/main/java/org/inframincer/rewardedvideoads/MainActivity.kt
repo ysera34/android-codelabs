@@ -6,6 +6,7 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.reward.RewardItem
 import com.google.android.gms.ads.reward.RewardedVideoAd
 import com.google.android.gms.ads.reward.RewardedVideoAdListener
+import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity(), RewardedVideoAdListener {
@@ -24,6 +25,14 @@ class MainActivity : AppCompatActivity(), RewardedVideoAdListener {
 
         // Get reference to singleton RewardedVideoAd object
         rewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
+
+        // Set click handler
+        watch_video_button.setOnClickListener {
+            if (rewardedVideoAd.isLoaded) {
+                rewardedVideoAd.show()
+                toast("RewardedVideoAd object to display the rewarded video ad.")
+            }
+        }
     }
 
     override fun onResume() {
