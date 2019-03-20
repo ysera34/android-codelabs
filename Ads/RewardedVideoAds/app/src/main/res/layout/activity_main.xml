@@ -7,14 +7,49 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+    <TextView
+            android:id="@+id/game_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/impossible_game"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="32dp"/>
+    <TextView
+            android:id="@+id/timer_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/game_title_text_view"
+            android:layout_marginTop="32dp"/>
+    <TextView
+            android:id="@+id/coin_count_text"
+            android:text="@string/default_coin_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timer_text_view"
+            android:layout_marginTop="32dp"/>
+    <Button
+            android:id="@+id/retry_game_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/retry_button_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coin_count_text"
+            android:layout_marginTop="32dp"/>
     <Button
             android:id="@+id/watch_video_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/watch_video_button_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/retry_game_button"
+            android:layout_marginTop="32dp"/>
 
 </android.support.constraint.ConstraintLayout>

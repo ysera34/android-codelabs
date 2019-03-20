@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">RewardedVideoAds</string>
     <string name="watch_video_button_text">Watch Video for additional coins</string>
+    <string name="impossible_game">impossible_game</string>
+    <string name="default_coin_text">default_coin_text</string>
+    <string name="retry_button_text">retry_button_text</string>
 </resources>

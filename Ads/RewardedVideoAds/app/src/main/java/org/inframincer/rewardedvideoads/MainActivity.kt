@@ -2,6 +2,7 @@ package org.inframincer.rewardedvideoads
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.reward.RewardItem
 import com.google.android.gms.ads.reward.RewardedVideoAd
@@ -33,6 +34,9 @@ class MainActivity : AppCompatActivity(), RewardedVideoAdListener {
                 toast("RewardedVideoAd object to display the rewarded video ad.")
             }
         }
+
+        // Get the "show ad" button, which shows a rewarded video when clicked.
+        watch_video_button.visibility = View.INVISIBLE
     }
 
     override fun onResume() {
@@ -81,5 +85,13 @@ class MainActivity : AppCompatActivity(), RewardedVideoAdListener {
 
     override fun onRewardedVideoCompleted() {
         toast("onRewardedVideoCompleted")
+    }
+
+    private fun gameOver() {
+        retry_game_button.visibility = View.VISIBLE
+        if (rewardedVideoAd.isLoaded) {
+            watch_video_button.visibility = View.VISIBLE
+        }
+        rewardedVideoAd.resume(this)
     }
 }
