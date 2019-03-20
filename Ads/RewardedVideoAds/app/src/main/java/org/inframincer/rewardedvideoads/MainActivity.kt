@@ -3,9 +3,12 @@ package org.inframincer.rewardedvideoads
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.reward.RewardItem
 import com.google.android.gms.ads.reward.RewardedVideoAd
+import com.google.android.gms.ads.reward.RewardedVideoAdListener
+import org.jetbrains.anko.toast
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), RewardedVideoAdListener {
 
     private lateinit var rewardedVideoAd: RewardedVideoAd
 
@@ -36,5 +39,38 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         rewardedVideoAd.destroy(this)
         super.onDestroy()
+    }
+
+    override fun onRewardedVideoAdLoaded() {
+        toast("onRewardedVideoAdLoaded")
+    }
+
+    override fun onRewardedVideoAdOpened() {
+        toast("onRewardedVideoAdOpened")
+    }
+
+    override fun onRewardedVideoStarted() {
+        toast("onRewardedVideoStarted")
+    }
+
+    override fun onRewardedVideoAdClosed() {
+        toast("onRewardedVideoAdClosed")
+    }
+
+    override fun onRewarded(p0: RewardItem?) {
+        toast("onRewarded")
+        toast("Ad triggered reward. reward amount: ${p0?.amount ?: 0}")
+    }
+
+    override fun onRewardedVideoAdLeftApplication() {
+        toast("onRewardedVideoAdLeftApplication")
+    }
+
+    override fun onRewardedVideoAdFailedToLoad(p0: Int) {
+        toast("onRewardedVideoAdFailedToLoad")
+    }
+
+    override fun onRewardedVideoCompleted() {
+        toast("onRewardedVideoCompleted")
     }
 }
