@@ -4,4 +4,7 @@
     <string name="impossible_game">impossible_game</string>
     <string name="default_coin_text">default_coin_text</string>
     <string name="retry_button_text">retry_button_text</string>
+    <string name="coin_count_text">Coins: %1$d</string>
+    <string name="timer_text">Seconds remaining: %1$d</string>
+    <string name="finish_game_text">You Lose!</string>
 </resources>
