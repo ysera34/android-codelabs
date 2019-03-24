@@ -108,9 +108,9 @@ class RecyclerViewAdapter(val context: Context, val recyclerViewItems: List<Any>
 
     private fun populateNativeAdView(nativeAd: UnifiedNativeAd, adView: UnifiedNativeAdView) {
         // Some assets are guaranteed to be in every UnifiedNativeAd.
-        (adView.headlineView as TextView).text = nativeAd.headline
-        (adView.bodyView as TextView).text = nativeAd.body
-        (adView.callToActionView as Button).text = nativeAd.callToAction
+        (adView.headlineView as? TextView)?.text = nativeAd.headline
+        (adView.bodyView as? TextView?)?.text = nativeAd.body
+        (adView.callToActionView as? Button)?.text = nativeAd.callToAction
 
         // These assets aren't guaranteed to be in every UnifiedNativeAd,
         // so it's important to check before trying to display them.
