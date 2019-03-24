@@ -56,12 +56,20 @@ class RecyclerViewAdapter(val context: Context, val recyclerViewItems: List<Any>
     /**
      * Creates a new view for a menu item view. This method is invoked by the layout manager.
      */
-    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val menuItemLayoutView = LayoutInflater.from(viewGroup.context).inflate(
-            R.layout.menu_item_container, viewGroup, false
-        )
-        return MenuItemViewHolder(menuItemLayoutView)
-    }
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
+        when (viewType) {
+            UNIFIED_NATIVE_AD_VIEW_TYPE -> {
+                val unifiedNativeAdView = LayoutInflater.from(viewGroup.context)
+                    .inflate(R.layout.ad_unified, viewGroup, false)
+                UnifiedNativeAdViewHolder(unifiedNativeAdView)
+            }
+            else -> { // include MENU_ITEM_VIEW_TYPE
+                val menuItemLayoutView = LayoutInflater.from(viewGroup.context)
+                    .inflate(R.layout.menu_item_container, viewGroup, false
+                )
+                MenuItemViewHolder(menuItemLayoutView)
+            }
+        }
 
     /**
      * Replaces the content in the views that make up the menu item view. This method is invoked
