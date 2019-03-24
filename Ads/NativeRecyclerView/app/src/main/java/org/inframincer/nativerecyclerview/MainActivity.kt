@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             addMenuItemsFromJson()
             loadNativeAds()
 
-            loadMenu()
+//            loadMenu()
         }
 
         // Initialize the Google Mobile Ads SDK
@@ -79,6 +79,7 @@ class MainActivity : AppCompatActivity() {
             nativeAds.add(unifiedNativeAd)
             if (!adLoader.isLoading) {
                 insertAdsInMenuItems()
+                loadMenu()
             }
         }.withAdListener(
             object : AdListener() {
@@ -88,6 +89,7 @@ class MainActivity : AppCompatActivity() {
                     Log.e("MainActivity", "The previous native ad failed to load. Attempting to" + " load another.")
                     if (!adLoader.isLoading) {
                         insertAdsInMenuItems()
+                        loadMenu()
                     }
                 }
             }).build()
