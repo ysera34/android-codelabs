@@ -11,6 +11,9 @@ import android.widget.TextView
 // A menu item view type.
 private const val MENU_ITEM_VIEW_TYPE = 0
 
+// The unified native ad view type.
+private const val UNIFIED_NATIVE_AD_VIEW_TYPE = 1
+
 class RecyclerViewAdapter(val context: Context, val recyclerViewItems: List<Any>)
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
