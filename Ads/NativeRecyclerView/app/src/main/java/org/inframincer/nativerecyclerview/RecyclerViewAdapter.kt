@@ -29,7 +29,7 @@ class RecyclerViewAdapter(val context: Context, val recyclerViewItems: List<Any>
         internal val menuItemImage: ImageView
 
         init {
-            menuItemImage = view.findViewById(R.id.menu_item_image) as ImageView
+            menuItemImage = view.findViewById(R.id.menu_item_image)
             menuItemName = view.findViewById(R.id.menu_item_name)
             menuItemPrice = view.findViewById(R.id.menu_item_price)
             menuItemCategory = view.findViewById(R.id.menu_item_category)
