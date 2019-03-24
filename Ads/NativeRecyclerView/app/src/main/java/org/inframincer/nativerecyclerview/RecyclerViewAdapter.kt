@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.google.android.gms.ads.formats.UnifiedNativeAd
 
 // A menu item view type.
 private const val MENU_ITEM_VIEW_TYPE = 0
@@ -45,6 +46,10 @@ class RecyclerViewAdapter(val context: Context, val recyclerViewItems: List<Any>
      * Determines the view type for the given position.
      */
     override fun getItemViewType(position: Int): Int {
+        val recyclerViewItem = recyclerViewItems[position]
+        if (recyclerViewItem is UnifiedNativeAd) {
+            return UNIFIED_NATIVE_AD_VIEW_TYPE
+        }
         return MENU_ITEM_VIEW_TYPE
     }
 
