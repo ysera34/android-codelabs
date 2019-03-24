@@ -80,21 +80,30 @@ class RecyclerViewAdapter(val context: Context, val recyclerViewItems: List<Any>
      * by the layout manager.
      */
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val menuItemHolder = holder as MenuItemViewHolder
-        val (name, description, price, category, imageName) = recyclerViewItems[position] as MenuItem
+        val viewType = getItemViewType(position)
+        when (viewType) {
+            UNIFIED_NATIVE_AD_VIEW_TYPE -> {
+                val nativeAd = recyclerViewItems[position] as UnifiedNativeAd
+                populateNativeAdView(nativeAd, (holder as UnifiedNativeAdViewHolder).adView)
+            }
+            else -> { // include MENU_ITEM_VIEW_TYPE
+                val menuItemHolder = holder as MenuItemViewHolder
+                val (name, description, price, category, imageName) = recyclerViewItems[position] as MenuItem
 
-        // Get the menu item image resource ID.
-        val imageResID = context.getResources().getIdentifier(
-            imageName, "drawable",
-            context.getPackageName()
-        )
+                // Get the menu item image resource ID.
+                val imageResID = context.resources.getIdentifier(
+                    imageName, "drawable",
+                    context.packageName
+                )
 
-        // Add the menu item details to the menu item view.
-        menuItemHolder.menuItemName.text = name
-        menuItemHolder.menuItemDescription.text = description
-        menuItemHolder.menuItemPrice.text = price
-        menuItemHolder.menuItemCategory.text = category
-        menuItemHolder.menuItemImage.setImageResource(imageResID)
+                // Add the menu item details to the menu item view.
+                menuItemHolder.menuItemName.text = name
+                menuItemHolder.menuItemDescription.text = description
+                menuItemHolder.menuItemPrice.text = price
+                menuItemHolder.menuItemCategory.text = category
+                menuItemHolder.menuItemImage.setImageResource(imageResID)
+            }
+        }
     }
 
     private fun populateNativeAdView(nativeAd: UnifiedNativeAd, adView: UnifiedNativeAdView) {
