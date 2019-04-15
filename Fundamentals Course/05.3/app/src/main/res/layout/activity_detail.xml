@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <RelativeLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".DetailActivity">
+
+        <ImageView
+                android:id="@+id/sportDetailImageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/sport_image"/>
+        <TextView
+                android:id="@+id/titleDetailTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/sportDetailImageView"
+                android:padding="8dp"
+                android:text="@string/title_placeholder"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark"
+                style="@style/TextAppearance.AppCompat.Headline"/>
+        <TextView
+                android:id="@+id/newsTitleDetailTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sportDetailImageView"
+                android:padding="8dp"
+                android:text="@string/news_placeholder"
+                android:textColor="?android:textColorSecondary"
+                style="@style/SportsDetailTitle"/>
+        <TextView
+                android:id="@+id/subTitleDetailTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/newsTitleDetailTextView"
+                android:padding="8dp"
+                android:text="@string/sports_info_placeholder"
+                style="@style/SportsDetailTitle"/>
+
+    </RelativeLayout>
+</ScrollView>
