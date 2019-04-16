@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Scorekeeper Espresso</string>
+    <string name="team_1">Team 1</string>
+    <string name="team_2">Team 2</string>
+    <string name="initial_count">0</string>
+    <string name="minus_button_description">Minus Button</string>
+    <string name="plus_button_description">Plus Button</string>
+</resources>
