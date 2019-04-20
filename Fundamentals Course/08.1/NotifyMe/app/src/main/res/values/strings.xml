@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Notify Me</string>
+    <string name="content_title">You\'re been notified!</string>
+    <string name="content_text">This is your notification text.</string>
+    <string name="notify_me">Notify Me!</string>
+    <string name="update_me">Update Me!</string>
+    <string name="cancel_me">Cancel Me!</string>
+    <string name="updated_content_title">Notification Updated!</string>
+    <string name="update_notification_title">Update Notification</string>
+</resources>
